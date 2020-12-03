@@ -1,0 +1,16 @@
+.container {
+  width: 500px;
+  margin: 0 auto !important;
+  padding-top: 30px;
+  align-items: center !important;
+}
+
+.footer {
+  max-width: 600px;
+  margin: 0 auto !important;
+  margin-top: 10px !important;
+}
+
+.footer p {
+  color: black;
+}

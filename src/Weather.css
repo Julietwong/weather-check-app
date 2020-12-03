@@ -1,0 +1,100 @@
+.card {
+  max-width: 500px;
+  height: 90vh !important;
+  background: url("/src/images/background\ mountain_11-16.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px !important;
+  margin: 0 auto !important;
+  box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.card-title {
+  font-size: 15px;
+}
+
+form {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.form-control {
+  max-width: 300px;
+  border: none !important;
+  border-radius: 10px 0px 0px 10px !important;
+}
+
+.btn-primary {
+  border-radius: 0px 10px 10px 0px !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.current-date {
+  text-align: center;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.city {
+  text-align: center;
+  font-size: 35px;
+  line-height: 0.8;
+}
+
+.temperature-container {
+  padding-top: 10px;
+}
+
+.temperature {
+  position: relative;
+  line-height: 1;
+  font-size: 55px;
+}
+
+.unit.celcius {
+  font-size: 25px;
+  position: relative;
+  bottom: 18px;
+  padding-left: 10px;
+  color: white;
+}
+
+.unit:hover {
+  text-decoration: none;
+}
+
+.unit.farenheit {
+  position: relative;
+  right: 13px;
+  top: 2px;
+  color: white;
+  text-decoration: underline;
+}
+
+p {
+  text-align: center;
+}
+
+.weather-icon {
+  display: block;
+  margin-left: 20px;
+  width: 80px;
+  padding: 0;
+}
+
+.weather-description {
+  padding-top: 20px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+ul {
+  padding-top: 20px;
+  padding-left: 80px;
+}
+li {
+  list-style: none;
+}
