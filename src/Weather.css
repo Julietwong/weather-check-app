@@ -98,3 +98,7 @@ ul {
 li {
   list-style: none;
 }
+
+.loading {
+  color: black;
+}
