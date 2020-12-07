@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import "./FormattedDate";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -15,7 +17,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      date: "12:43, Thurs 3 Dec",
+      timezone: response.data.timezone,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
     });
   }
@@ -34,11 +36,13 @@ export default function Weather(props) {
                   autoComplete="on"
                 />
                 <button type="submit" className="btn btn-primary">
-                  <i clasName="fa fa-search"></i>
+                  <i className="fa fa-search"></i>
                 </button>
               </div>
             </form>
-            <h2 className="current-date">{weatherData.date}</h2>
+            <h2 className="current-date">
+              <FormattedDate timezone={weatherData.timezone} />
+            </h2>
             <h1 className="city">
               {weatherData.city}, {weatherData.country}
             </h1>
