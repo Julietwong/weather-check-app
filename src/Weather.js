@@ -6,8 +6,9 @@ import WeatherInfo from "./WeatherInfo";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  let backgroundClassName = "card";
+
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -17,8 +18,31 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       timezone: response.data.timezone,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
+  }
+
+  //changing background
+  let time = new Date();
+  let localTimeOffset = time.getTimezoneOffset() * 60;
+  time.setSeconds(time.getSeconds() + localTimeOffset + weatherData.timezone);
+  let hours = time.getHours();
+  console.log(hours);
+  if (hours >= 20 && hours < 24) {
+    backgroundClassName = "card evening";
+  }
+  if (hours >= 5 && hours < 11) {
+    backgroundClassName = "card morning";
+  }
+  if (hours >= 12 && hours < 17) {
+    backgroundClassName = "card midday";
+  }
+  if (hours >= 17 && hours < 20) {
+    backgroundClassName = "card afternoon";
+  }
+
+  if (hours >= 0 && hours < 5) {
+    backgroundClassName = "card evening";
   }
 
   function search() {
@@ -36,10 +60,11 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  //return result
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <div className="card">
+        <div className={backgroundClassName}>
           <div className="card-body">
             <h5 className="card-title">Weather Check</h5>
             <form onSubmit={handleSubmit}>

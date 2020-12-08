@@ -1,13 +1,30 @@
 .card {
   max-width: 500px;
   height: 90vh !important;
-  background: url("/src/images/background\ mountain_11-16.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  border: none !important;
   border-radius: 10px !important;
   margin: 0 auto !important;
   box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.morning {
+  background: url("/src/images/background\ mountain_5-10.png");
+}
+
+.midday {
+  background: url("/src/images/background\ mountain_11-16.png");
+}
+
+.afternoon {
+  background: url("/src/images/background\ mountain_17-19.png");
+}
+
+.evening {
+  background: url("/src/images/background\ mountain_20-4.png");
+}
+
 .card-title {
   font-size: 15px;
 }
