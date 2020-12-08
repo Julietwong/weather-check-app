@@ -70,25 +70,41 @@ form {
   line-height: 1;
   font-size: 55px;
 }
-
 .unit.celcius {
+  font-size: 15px;
+  position: relative;
+  bottom: 24px;
+  padding-left: 10px;
+  color: white;
+  text-decoration: underline;
+}
+
+.unit.celcius.active {
   font-size: 25px;
   position: relative;
   bottom: 18px;
   padding-left: 10px;
   color: white;
-}
-
-.unit:hover {
   text-decoration: none;
 }
-
 .unit.farenheit {
+  font-size: 15px;
   position: relative;
-  right: 13px;
+  right: 20px;
   top: 2px;
   color: white;
   text-decoration: underline;
+}
+.unit.farenheit.active {
+  position: relative;
+  font-size: 25px;
+  right: 13px;
+  top: 2px;
+  color: white;
+  text-decoration: none;
+}
+.unit:hover {
+  text-decoration: none;
 }
 
 p {
