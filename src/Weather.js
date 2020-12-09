@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -27,7 +28,6 @@ export default function Weather(props) {
   let localTimeOffset = time.getTimezoneOffset() * 60;
   time.setSeconds(time.getSeconds() + localTimeOffset + weatherData.timezone);
   let hours = time.getHours();
-  console.log(hours);
   if (hours >= 20 && hours < 24) {
     backgroundClassName = "card evening";
   }
@@ -82,6 +82,11 @@ export default function Weather(props) {
               </div>
             </form>
             <WeatherInfo data={weatherData} />
+            <WeatherForecast
+              city={weatherData.city}
+              country={weatherData.country}
+              timezone={weatherData.timezone}
+            />
           </div>
         </div>
       </div>
